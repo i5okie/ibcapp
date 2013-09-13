@@ -1,0 +1,13 @@
+<%= simple_form_for(@vendor_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :item_id %>
+    <%= f.input :vendor_id %>
+    <%= f.input :spn %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

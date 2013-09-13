@@ -1,4 +1,15 @@
 Ibcapp::Application.routes.draw do
+  resources :vendor_items
+
+  resources :prices
+
+  resources :suppliers
+
+  resources :vendors
+
+  resources :items
+
+  root :to => 'home#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

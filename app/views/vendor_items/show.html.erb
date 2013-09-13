@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @vendor_item.item_id %>
+</p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @vendor_item.vendor_id %>
+</p>
+
+<p>
+  <strong>Spn:</strong>
+  <%= @vendor_item.spn %>
+</p>
+
+<%= link_to 'Edit', edit_vendor_item_path(@vendor_item) %> |
+<%= link_to 'Back', vendor_items_path %>
