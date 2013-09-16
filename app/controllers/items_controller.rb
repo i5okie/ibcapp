@@ -5,11 +5,19 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @vendor = Vendor.all
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @vendor = Vendor.find(@item.vendor_id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "file_name"
+      end
+    end
   end
 
   # GET /items/new
@@ -25,9 +33,11 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @vendor_item = VendorItem.new(vendor_item_params)
 
     respond_to do |format|
       if @item.save
+        @vendor_item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @item }
       else
@@ -69,6 +79,10 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :specs, :vendor_id, :vpn)
+      params.require(:item).permit(:name, :description, :specs, :vendor_id, :vpn, :bootsy_image_gallery_id)
+    end
+
+    def vendor_item_params
+      params.require(:vendor_item).permit(:item_id, :vendor_id, :spn)
     end
 end

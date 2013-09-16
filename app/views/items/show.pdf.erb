@@ -1,8 +1,9 @@
+<%= wicked_pdf_stylesheet_link_tag 'application' %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @item.name %>
+  <h2><%= @item.vendor.name %> <%= @item.name %></h2>
 </p>
 
 <p>
@@ -16,14 +17,6 @@
 </p>
 
 <p>
-  <strong>Vendor:</strong>
-  <%= @item.vendor.name %>
-</p>
-
-<p>
   <strong>Vpn:</strong>
   <%= @item.vpn %>
 </p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>

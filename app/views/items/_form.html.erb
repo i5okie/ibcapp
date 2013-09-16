@@ -3,9 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :bootsy, id: "wysiwyg_textfield" %>
     <%= f.input :specs %>
-    <%= f.input :vendor_id %>
+    <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, include_blank: 'Select One...' %>
     <%= f.input :vpn %>
   </div>
 

@@ -1,4 +1,5 @@
 Ibcapp::Application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :vendor_items
 
   resources :prices

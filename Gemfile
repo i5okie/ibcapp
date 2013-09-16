@@ -14,6 +14,13 @@ gem 'sqlite3'
 # App specific
 gem 'figaro'
 
+# PDF Generation
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
+# WYSIWYG
+gem 'bootsy'
+
 # rails-bootstrap
 gem 'bootstrap-sass'
 gem 'figaro'

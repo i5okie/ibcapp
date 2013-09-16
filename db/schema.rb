@@ -11,6 +11,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130916171622) do
+
+  create_table "bootsy_image_galleries", force: true do |t|
+    t.integer  "bootsy_resource_id"
+    t.string   "bootsy_resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bootsy_images", force: true do |t|
+    t.string   "image_file"
+    t.integer  "image_gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "specs"
+    t.integer  "vendor_id"
+    t.string   "vpn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["vpn"], name: "index_items_on_vpn", unique: true
+
+  create_table "prices", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "supplier_id"
+    t.integer  "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "suppliers", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "website"
+    t.string   "account_number"
+    t.string   "sales_contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vendor_items", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "vendor_id"
+    t.string   "spn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vendor_items", ["spn"], name: "index_vendor_items_on_spn", unique: true
+
+  create_table "vendors", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "website"
+    t.string   "support_page"
+    t.boolean  "partner"
+    t.string   "partner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
