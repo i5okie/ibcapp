@@ -13,6 +13,8 @@ gem 'sqlite3'
 
 # App specific
 gem 'figaro'
+gem 'jquery-ui-rails'
+gem 'rails-admin'
 
 # PDF Generation
 gem 'wkhtmltopdf-binary'
@@ -20,6 +22,9 @@ gem 'wicked_pdf'
 
 # WYSIWYG
 gem 'bootsy'
+
+# Tagging
+gem 'acts-as-taggable-on'
 
 # rails-bootstrap
 gem 'bootstrap-sass'

@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  respond_to :json
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -79,7 +80,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :specs, :vendor_id, :vpn, :bootsy_image_gallery_id)
+      params.require(:item).permit(:name, :description, :specs, :vendor_id, :vpn, :bootsy_image_gallery_id, :tag_list)
     end
 
     def vendor_item_params

@@ -1,15 +1,10 @@
 Ibcapp::Application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :vendor_items
-
   resources :prices
-
   resources :suppliers
-
   resources :vendors
-
   resources :items
-
   root :to => 'home#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

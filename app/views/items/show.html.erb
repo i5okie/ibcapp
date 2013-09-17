@@ -12,7 +12,9 @@
 
 <p>
   <strong>Specs:</strong>
-  <%= @item.specs %>
+  <% @item.tag_list.each do |tg| %>
+    <span class="label"><%= tg %></span>
+  <% end %>
 </p>
 
 <p>

@@ -1,15 +1,25 @@
 <%= simple_form_for(@item) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description, as: :bootsy, id: "wysiwyg_textfield" %>
-    <%= f.input :specs %>
-    <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, include_blank: 'Select One...' %>
-    <%= f.input :vpn %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="span3">        
+          <%= f.input :name, :input_html => { :class => "span3"} %>
+          <%= f.input :tag_list, label: "Spec Tags", :hint => 'separate with coma', :input_html => { :class => "span3"} %>
+          <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, include_blank: 'Select One...' %>
+          <label class="control-label" for="inputIcon">Manufacturer Part Number</label>
+          <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-th"></i></span>
+            <%= f.text_field :vpn, :input_html => { :class => "span2", :id => "inputIcon", :type => "text"} %>
+          </div>
+          </div>
+    </div>
+    <div class="span7">
+        <%= f.input :description, as: :bootsy, id: "wysiwyg_textfield" %>  
+    </div>
+  
+    <div class="span10">
+     <%= link_to 'Back', items_path, :class =>"btn" %><%= f.button :submit, :class => "btn btn-primary pull-right" %>
+    </div>
   </div>
 <% end %>
