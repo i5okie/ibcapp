@@ -14,7 +14,8 @@ gem 'sqlite3'
 # App specific
 gem 'figaro'
 gem 'jquery-ui-rails'
-gem 'rails-admin'
+gem 'rails_admin'
+gem 'money-rails'
 
 # PDF Generation
 gem 'wkhtmltopdf-binary'
@@ -37,12 +38,14 @@ group :development do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'meta_request'
+
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'database_cleaner'
   gem 'email_spec'
   gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails'
@@ -59,3 +62,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem "devise"
