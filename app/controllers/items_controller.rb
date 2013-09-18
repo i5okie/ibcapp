@@ -21,6 +21,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def import
+    Item.import(params[:file])
+    redirect_to index_items_path, notice: "Items imported."
+  end
+
   # GET /items/new
   def new
     @item = Item.new

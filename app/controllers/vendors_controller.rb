@@ -12,6 +12,11 @@ class VendorsController < ApplicationController
   def show
   end
 
+  def import
+    Vendor.import(params[:file])
+    redirect_to index_vendors_path, notice: "Items imported."
+  end
+
   # GET /vendors/new
   def new
     @vendor = Vendor.new

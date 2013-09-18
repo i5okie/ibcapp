@@ -6,7 +6,9 @@ Ibcapp::Application.routes.draw do
   resources :prices
   resources :suppliers
   resources :vendors
-  resources :items
+  resources :items do
+    collection { post :import }
+  end
   root :to => 'home#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

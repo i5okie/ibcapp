@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'jquery-ui-rails'
 gem 'rails_admin'
 gem 'money-rails'
+gem 'roo'
 
 # PDF Generation
 gem 'wkhtmltopdf-binary'
