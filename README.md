@@ -7,33 +7,33 @@ to quickbooks or vice versa.
 
 ### Models
 * Item
-⋅⋅* name
-⋅⋅* description
-⋅⋅* specs
-⋅⋅* vendor_id
-⋅⋅* vpn
-⋅⋅* msrp_cents
+  * name
+  * description
+  * specs
+  * vendor_id
+  * vpn
+  * msrp_cents
 * Price
-⋅⋅* item_id
-⋅⋅* supplier_id
-⋅⋅* cost
+  * item_id
+  * supplier_id
+  * cost
 * Supplier
-⋅⋅* name
-⋅⋅* description
-⋅⋅* website
-⋅⋅* account_number
-⋅⋅* sales_contact
+  * name
+  * description
+  * website
+  * account_number
+  * sales_contact
 * User
-⋅⋅* *currently only being used for Rails_Admin*
+  * *currently only being used for Rails_Admin*
 * Vendor
-⋅⋅* name
-⋅⋅* description
-⋅⋅* website
-⋅⋅* support_page
-⋅⋅* partner
-⋅⋅* partner_id
+  * name
+  * description
+  * website
+  * support_page
+  * partner
+  * partner_id
 * Vendor_item (joiner)
 
 
 ### TO DOs
-⋅⋅* * spn for (supplier part number, unique to each supplier) should be moved to price model*
+  * * spn for (supplier part number, unique to each supplier) should be moved to price model*
