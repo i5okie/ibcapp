@@ -33,4 +33,7 @@ to quickbooks or vice versa.
 ⋅⋅* partner
 ⋅⋅* partner_id
 * Vendor_item (joiner)
+
+
+### TO DOs
 ⋅⋅* * spn for (supplier part number, unique to each supplier) should be moved to price model*
