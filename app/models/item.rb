@@ -6,9 +6,11 @@ class Item < ActiveRecord::Base
 	has_many :prices
 	has_many :suppliers, through: :prices
 	belongs_to :vendor
+	has_one :vendor
 
 	acts_as_taggable
 	acts_as_taggable_on :specs
+
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|
 			item = find_by_id(row["id"]) || new

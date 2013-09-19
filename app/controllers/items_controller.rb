@@ -39,11 +39,9 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-    @vendor_item = VendorItem.new(vendor_item_params)
 
     respond_to do |format|
       if @item.save
-        @vendor_item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @item }
       else

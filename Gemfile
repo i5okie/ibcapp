@@ -35,13 +35,13 @@ gem 'high_voltage'
 gem 'simple_form', '>= 3.0.0.rc'
 
 group :development do
-  gem 'better_errors'
+#  gem 'better_errors'
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'meta_request'
-
+  gem 'binding_of_caller'
 end
 
 group :test do
@@ -62,6 +62,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-
 gem "devise"

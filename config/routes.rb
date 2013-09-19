@@ -2,10 +2,11 @@ Ibcapp::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-  resources :vendor_items
   resources :prices
   resources :suppliers
-  resources :vendors
+  resources :vendors do
+      collection { post :import }
+  end
   resources :items do
     collection { post :import }
   end

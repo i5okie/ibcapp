@@ -18,10 +18,10 @@
     </thead>  
       <tbody>
     <% @items.each do |item| %>
-      <tr onclick="window.location.href = '<%= item_path(item) %>'" style="cursor: pointer;">
-        <td><%= item.name %></td>
-        <td><%= truncate(item.description, :length => 100) %></td>
-        <td><%= item.vendor.name %></td>
+      <tr style="cursor: pointer;">
+        <td onclick="window.location.href = '<%= item_path(item) %>'"><%= item.name %></td>
+        <td onclick="window.location.href = '<%= item_path(item) %>'"><%= truncate(item.description, :length => 100) %></td>
+        <td onclick="window.location.href = '<%= vendor_path(item.vendor_id) %>'"><%= @vendor.name %></td>
         <td><%= item.vpn %></td>
         <td><%= humanized_money_with_symbol item.msrp %></td>
         <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_item_path(item) %><%= link_to '<i class="icon-remove"></i>'.html_safe, item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,6 +34,3 @@
   <%= file_field_tag :file%>
   <%= submit_tag "Import" %>
 <% end %>
-
-
-

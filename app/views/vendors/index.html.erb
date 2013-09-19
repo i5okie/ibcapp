@@ -35,7 +35,14 @@
 <br>
 
 <%= link_to 'New Vendor', new_vendor_path %>
-<%= form_tag vendors_path, multipart: true do %>
+
+<p>
+  Download:
+  <%= link_to "CSV", vendors_path(format: "csv") %> |
+  <%= link_to "Excel", vendors_path(format: "xls") %>
+</p>
+
+<%= form_tag import_vendors_path, multipart: true do %>
   <%= file_field_tag :file%>
   <%= submit_tag "Import" %>
 <% end %>

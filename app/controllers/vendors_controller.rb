@@ -5,6 +5,11 @@ class VendorsController < ApplicationController
   # GET /vendors.json
   def index
     @vendors = Vendor.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @vendors.to_csv }
+      format.xls
+    end
   end
 
   # GET /vendors/1
@@ -14,7 +19,7 @@ class VendorsController < ApplicationController
 
   def import
     Vendor.import(params[:file])
-    redirect_to index_vendors_path, notice: "Items imported."
+    redirect_to vendors_path, notice: "Items imported."
   end
 
   # GET /vendors/new
