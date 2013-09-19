@@ -36,4 +36,5 @@ to quickbooks or vice versa.
 
 
 ### TO DOs
-  * * spn for (supplier part number, unique to each supplier) should be moved to price model*
+  * *spn for (supplier part number, unique to each supplier) should be moved to price model*
+  * lots more to do.. will update in master branch
