@@ -11,20 +11,23 @@ to quickbooks or vice versa.
   * description
   * specs
   * vendor_id
-  * vpn
+  * vpn            # manufacturer part number
   * msrp_cents
 * Price
   * item_id
   * supplier_id
-  * cost
+  * cost           # buy cost from supplier
+  * spn            # supplier part number
 * Supplier
   * name
   * description
   * website
   * account_number
   * sales_contact
+
 * User
   * *currently only being used for Rails_Admin*
+
 * Vendor
   * name
   * description
@@ -32,9 +35,16 @@ to quickbooks or vice versa.
   * support_page
   * partner
   * partner_id
-* Vendor_item (joiner)
+
+
+not yet implemented:
+* Package building
+  - User should be able to create a package
+  - A Package should contain items with descriptions
+  - 
+
 
 
 ### TO DOs
-  * *spn for (supplier part number, unique to each supplier) should be moved to price model*
-  * lots more to do.. will update in master branch
+  * Done *spn for (supplier part number, unique to each supplier) should be moved to price model*
+  * 

@@ -7,10 +7,10 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Manufacturer</th>
-        <th>Part Number</th>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>MANUFACTURER</th>
+        <th>PART NUMBER</th>
         <th>MSRP</th>
         <th style="width: 36px;">
         </th>
@@ -34,3 +34,9 @@
   <%= file_field_tag :file%>
   <%= submit_tag "Import" %>
 <% end %>
+
+<p>
+  Download:
+  <%= link_to "CSV", items_path(format: "csv") %> |
+  <%= link_to "Excel", items_path(format: "xls") %>
+</p>

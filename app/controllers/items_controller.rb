@@ -7,6 +7,11 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @vendor = Vendor.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @items.to_csv }
+      format.xls
+    end
   end
 
   # GET /items/1
