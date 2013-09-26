@@ -1,6 +1,5 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
-
   # GET /vendors
   # GET /vendors.json
   def index
@@ -15,6 +14,7 @@ class VendorsController < ApplicationController
   # GET /vendors/1
   # GET /vendors/1.json
   def show
+    @items = Vendor.find(@vendor).items.order(:name).page params[:page]
   end
 
   def import

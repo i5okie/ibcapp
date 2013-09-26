@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @vendor.name %>
+  <h2> <%= @vendor.name %> </h2>
 </p>
 
-<p>
+<div class="well">
   <strong>Description:</strong>
   <%= @vendor.description %>
-</p>
 
 <p>
   <strong>Website:</strong>
@@ -29,6 +27,35 @@
   <strong>Partner:</strong>
   <%= @vendor.partner_id %>
 </p>
+</div>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>PART NUMBER</th>
+        <th>MSRP</th>
+        <th style="width: 36px;">
+        </th>
+      </tr>
+    </thead>  
+      <tbody>
+    <% @items.each do |item| %>
+      <tr style="cursor: pointer;">
+        <td onclick="window.location.href = '<%= item_path(item) %>'"><%= item.name %></td>
+        <td onclick="window.location.href = '<%= item_path(item) %>'"><%= truncate(item.description, :length => 100) %></td>
+        <td><%= item.vpn %></td>
+        <td><%= humanized_money_with_symbol item.msrp %></td>
+        <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_item_path(item) %><%= link_to '<i class="icon-remove"></i>'.html_safe, item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <%= paginate @items %>
+</div>
+
 
 <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
 <%= link_to 'Back', vendors_path %>

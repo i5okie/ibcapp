@@ -6,6 +6,7 @@ Ibcapp::Application.routes.draw do
   resources :suppliers
   resources :vendors do
       collection { post :import }
+      resources :items
   end
   resources :items do
     collection { post :import }

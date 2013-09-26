@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.order(:name).page params[:page]
+    @itsearch = Item.search(params[:q])
+    @items = @itsearch.result.order(:name).page params[:page]
     @vendor = Vendor.all
     respond_to do |format|
       format.html

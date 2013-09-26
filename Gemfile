@@ -18,6 +18,7 @@ gem 'rails_admin'
 gem 'money-rails'
 gem 'roo'
 gem 'kaminari'
+gem 'ransack'
 
 # PDF Generation
 gem 'wkhtmltopdf-binary'

@@ -2,7 +2,16 @@
 
 <div class="btn-toolbar"> 
   <%= link_to 'Add Item', new_item_path, class: "btn btn-primary" %>
+  <%= search_form_for @itsearch do |f| %>
+  <div class="form-search form-horizontal pull-right">
+    <div class="input-append span3">
+      <%= f.text_field(:name_cont, :class => "search-query", :placeholder => "search") %>  
+      <%= f.submit("search", :class => "btn") %>
+    </div>
+  </div>
+<% end %>
 </div>
+
 <div>
   <table class="table table-hover">
     <thead>
