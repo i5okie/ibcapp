@@ -29,6 +29,7 @@
     <% end %>
   </tbody>
   </table>
+  <%= paginate @items %>
 </div>
 <%= form_tag import_items_path, multipart: true do %>
   <%= file_field_tag :file%>

@@ -245,6 +245,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
+  kaminari
   meta_request
   money-rails
   pg

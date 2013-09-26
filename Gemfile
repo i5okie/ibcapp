@@ -17,6 +17,7 @@ gem 'jquery-ui-rails'
 gem 'rails_admin'
 gem 'money-rails'
 gem 'roo'
+gem 'kaminari'
 
 # PDF Generation
 gem 'wkhtmltopdf-binary'
